@@ -20,7 +20,7 @@ function App() {
   const translateY = virtualRows.length > 0 ? virtualRows[0].start : 0;
 
   return (
-    <div className="w-[100vh] overflow-auto">
+    <div className="">
       <div
         className="relative"
         style={{ height: `${virtualizer.getTotalSize()}px` }}
@@ -35,7 +35,7 @@ function App() {
 
             return (
               <div
-                className="grid gap-4 my-6"
+                className="grid gap-2 my-2 w-[95vw] mx-2"
                 key={key}
                 data-index={index}
                 style={{
@@ -43,7 +43,11 @@ function App() {
                 }}
               >
                 {rowCards.map((card, cardIndex) => (
-                  <Card key={startIndex + cardIndex} index={startIndex + cardIndex} data={card} />
+                  <Card
+                    key={startIndex + cardIndex}
+                    index={startIndex + cardIndex}
+                    data={card}
+                  />
                 ))}
               </div>
             );
